@@ -1,16 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .tape {
   display: flex;
+  margin-top: 1em;
 }
 
 .element {
   padding: 0 5px;
-  border: 1px solid red;
+  border: 1px solid #944654;
 }
 
 .bgGreen {
-  background-color: green;
+  background-color: #36f1cd;
 }
 
-header {
-  background-color: green;
+.estadoActual {
+  border: 2px solid #944654;
+  padding: 0.5em;
+  margin-top: 1em;
+}
+
+main {
+  height: 80.5vh;
+}
+
+header,
+footer {
+  background-color: #944654;
+  padding: 1em;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  border: solid 1px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  min-width: 50%;
+  box-shadow: 3px 1px 9px black;
+  border-radius: 3px;
+}
+
+button {
+  margin: 0.5em;
+  padding: 5px;
+  background-color: #297373;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+input {
+  width: 80%;
+  margin-bottom: 1em;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.output {
+  background-color: #944654;
+  margin-top: 1em;
+  padding: 0.5em;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
 }
