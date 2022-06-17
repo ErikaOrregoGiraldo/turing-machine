@@ -1,0 +1,286 @@
+Maquina de turing
+//000001010101010100
+
+Char ObtenerSimbolo(String cadena, int cabezal)
+{
+   if (cabezal<0 || cabezal>=length(cadena)) return "B";
+   return cadena[cabezal];
+}
+
+Transicion(cadena, cabezal, reemplazo, movimiento, EstadoActual, NuevoEstado){
+    cadena[cabezal] = reemplazo;
+	if (movimiento =="D") cabezal++;
+	cabezal--;
+	EstadoActual = NuevoEstado;
+}
+
+Leer(Cadena);
+EstadoActual = EstadoInicial;
+Cabezal = 0;
+
+While (not CondicionSalida){
+	
+	Switch(EstadoActual){
+	
+		Case A:
+			Simbolo = ObtenerSimbolo(Cadena, Cabezal);
+			If (Simbolo == "S") Transicion(cadena, cabezal, Simbolo, "D", EstadoActual,EstadoActual);
+			else
+			if (Simbolo == "1" || Simbolo == "0")
+				Transicion(cadena, cabezal, Simbolo, "D");
+		break;
+			
+		}	
+		Case B:
+			if (Simbolo == "0"){
+				Cabezal++;
+				EstadoActual = C;
+			}
+			if (Simbolo == "1"){
+				Cabezal++;
+				EstadoActual = D;
+			}
+
+    
+
+}
+
+
+000 01 1100  B = 1100
+
+public void main(){
+int A,B,C,T;
+B = 1100;
+}
+
+Asignar valores
+A0000B0000C0000T0000S000001010000101111111
+Asignar variables
+A0000B1101C0000T0000S0010001111
+A0000B0000C1101T0000S0010010111
+A0000B0000C0000T0011S0010011111
+A0000B0000C0000T0011S0010000111
+
+A1010B1000C0000T0011S0010100111
+
+A1100B1001C0101T0011S0010110111
+
+A1100B1001C0101T0111S0010111111
+
+A1100B1001C0101T0111S0011000111
+
+A1100B1101C0101T0111S0011001111
+
+A1100B1101C0101T0111S0011011111
+
+A1111B1101C0101T1001S0011100111
+
+A1111B1101C0101T0001S0011110111
+
+A1111B1101C0101T0001S010101111
+
+A1111B1101C0101T0001S010100111
+
+A1111B1101C0101T0001S00010101110000111
+
+A1111B1101C0101T0001S00001101110001111
+
+A1111B1101C0101T0001S00010101110010111
+
+A1111B1101C0101T0001S0111010111
+
+A1111B1101C0101T0001S0110110111
+
+A1111B1101C0101T0001S0110100111
+
+A1111B1101C0101T0001S0111000111
+
+
+A0010B0110C0010T0000S10110000000011111110111
+
+A0000B0000C0000T0000S000 01 0010 001 10 01 101 011 10 01 110 111
+A0000B0000C0000T0000S00001001000110011010111001110111
+
+async function repetir() {
+  while (estadoActual !== "Q1") {
+    await sleep(100);
+    estado.innerHTML = estadoActual;
+    let containerSimbolo = tapeElements[cabezal];
+    let simbolo = tapeElements[cabezal].innerHTML;
+
+    switch (estadoActual) {
+      case "InicioRepetir":
+        if (simbolo === "0") {
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "1") {
+          estadoActual = "Q453";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q453":
+        if (simbolo === "0") {
+          estadoActual = "InicioRepetir";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "1") {
+          estadoActual = "Q454";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q454":
+        if (simbolo === "0") {
+          estadoActual = "Q455";
+          containerSimbolo.innerHTML = "F";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "1") {
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q455":
+        if (simbolo !== "C") {
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "C") {
+          estadoActual = "Q456";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q456":
+        if (simbolo === "0") {
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "1") {
+          estadoActual = "Q459";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "T") {
+          estadoActual = "Q457";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q457":
+        if (simbolo !== "F") {
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "F") {
+          estadoActual = "Q1";
+          containerSimbolo.innerHTML = "0";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q459":
+        if (simbolo === "0" || simbolo === "1") {
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "C") {
+          estadoActual = "Sumar1111";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        break;
+      case "Sumar1111":
+        if (simbolo === "0") {
+          estadoActual = "Q460";
+          containerSimbolo.innerHTML = "1";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "1") {
+          estadoActual = "Q469";
+          containerSimbolo.innerHTML = "0";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        break;
+      case "Q460":
+        if (simbolo === "0") {
+          estadoActual = "Q463";
+          containerSimbolo.innerHTML = "1";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "1") {
+          estadoActual = "Q461";
+          containerSimbolo.innerHTML = "0";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        break;
+      case "Q461":
+      case "Q464":
+      case "Q469":
+        if (simbolo === "0" || simbolo === "1") {
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "C") {
+          estadoActual = "Q470";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q463":
+        if (simbolo === "0") {
+          estadoActual = "Q467";
+          containerSimbolo.innerHTML = "1";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        if (simbolo === "1") {
+          estadoActual = "Q464";
+          containerSimbolo.innerHTML = "0";
+          cabezal--;
+          colorearCasilla("L");
+        }
+        break;
+      case "Q467":
+        if (simbolo === "1") {
+          containerSimbolo.innerHTML = "0";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "C") {
+          estadoActual = "Q470";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "B") {
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      case "Q470":
+        if (simbolo !== "R") {
+          cabezal++;
+          colorearCasilla("R");
+        }
+        if (simbolo === "R") {
+          estadoActual = "Q1";
+          cabezal++;
+          colorearCasilla("R");
+        }
+        break;
+      default:
+        estadoActual = "Reject";
+        break;
+    }
+  }
+
+  return estadoActual;
+}
